@@ -1,0 +1,25 @@
+body {
+    box-sizing: border-box;
+    background-color: rgb(202, 151, 204);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* text-align: center; */
+}
+
+/* .container{
+    margin-top: 8%;
+} */
+
+
+ul{
+    display: list-item;
+  /* list-style-type: square; */
+  list-style-type: none;
+}
+
+.form-select{
+    width: 150px;
+}
+
+.search-btn{
+    padding-top: 3%;
+}
