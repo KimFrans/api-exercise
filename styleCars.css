@@ -1,14 +1,9 @@
 body {
     box-sizing: border-box;
-    background-color: rgb(202, 151, 204);
+    /* background-color: rgb(202, 151, 204); */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* text-align: center; */
 }
-
-/* .container{
-    margin-top: 8%;
-} */
-
 
 ul{
     display: list-item;
@@ -21,5 +16,34 @@ ul{
 }
 
 .search-btn{
-    padding-top: 3%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+.cars{
+    color: white;
+}
+
+h1{
+    margin-left: 3%;
+}
+
+h4{
+    margin-left: 3%;
+}
+
+p{
+    margin-left: 3%;
+}
+
+.colorFilter{
+    margin-left: 8%;
+}
+
+.brandsFilter{
+    margin-left: 8%;
+}
+
+#search{
+    margin-left: 11%;
 }

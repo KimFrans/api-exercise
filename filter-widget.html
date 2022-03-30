@@ -13,11 +13,34 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
 
 	<script type="template-x" class="filterTemplate">
+		<option value="{{this}}"></option>
 		{{#each filter}}
                 <option value="{{this}}">{{this}}</option>
         {{/each}}
 
-		{{#each filters}}
+		<table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Make</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Reg_number</th>
+                </tr>
+            </thead>
+        <tbody>
+            {{#each filters}}
+              <tr>
+                <th scope="row">{{this.make}}</th>
+                <th scope="row">{{this.model}}</th>
+                <th scope="row">{{this.color}}</th>
+                <th scope="row">{{this.price}}</th>
+                <th scope="row">{{this.reg_number}}</th>
+              </tr>
+            {{/each}}
+        </tbody>
+
+		<!-- {{#each filters}}
 		<ul>
 			<li>{{this.make}}</li>
 			<li>{{this.model}}</li>
@@ -25,7 +48,7 @@
 			<li>{{this.price}}</li>
 			<li>{{this.reg_number}}</li>
 		</ul>
-		{{/each}}
+		{{/each}} -->
 	
 
 	</script>
@@ -33,41 +56,35 @@
 </head>
 <body>
 
-	<div class="header">
-		<h1>Filter widget</h1>
-	</div>
-	
-
-	<div class="colorFilter">
-        <label for="color">Color:</label>
-        <select name="colors" id="colors" class="form-select" value="">
+    <div class="bg-dark">
+        <h1 class="display-4 text-warning">Filter widget</h1>
+		<p class="text-primary">Please select a color and a brand to search for: </p>
+        <div class="colorFilter">
+            <label for="color">Color:</label>
+            <select name="colors" id="colors" class="form-select" value="">
+                
+            </select>
             
-        </select>
-        
-        
-
-	</div>
-
-	<div class="brandsFilter">
-        <label for="brand">Brand:</label>
-        <select name="brand" id="brand" class="form-select">
+		</div>
             
-        </select>
-
-	</div>
-	
-
-	
-	<!-- <button class="search">search</button> -->
-    <div class="search-btn">
-        <button type="button" class="btn btn-primary" id="search">Search</button>
-
+        <div class="brandsFilter">
+            <label for="brand">Brand:</label>
+            <select name="brand" id="brand" class="form-select">
+                    
+            </select>
+        
+        </div>
+    
+        <div class="search-btn">
+            <button type="button" class="btn btn-primary" id="search">Search</button>
+    
+        </div>
+        <div class="search-result">
+    
+        </div>
     </div>
 	
-
-	<div class="search-result">
-
-	</div>
+	<!-- <button class="search">search</button> -->
 
 	<script src="filter.js"></script>
 

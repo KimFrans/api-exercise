@@ -1,7 +1,7 @@
 const filterColor = document.getElementById('colors')
 const filterBrand = document.getElementById('brand')
 
-const filterButton = document.querySelector('.search')
+const filterButton = document.getElementById('search')
 const filterDisplay = document.querySelector('.search-result')
 
 const filterTemplateText = document.querySelector('.filterTemplate');
