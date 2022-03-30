@@ -10,6 +10,11 @@ const colorTemplateText = document.querySelector('.colourTemplate');
 const colorTemplate =  Handlebars.compile(colorTemplateText.innerHTML)
 // const filterTemplate =  Handlebars.compile(filterTemplateText.innerHTML)
 
+const carsTemplateText = document.querySelector('.table');
+// const filterTemplateText = document.querySelector('.filterTemplate');
+
+const carsTemplate =  Handlebars.compile(carsTemplateText.innerHTML)
+
 axios
     .get('https://api-tutor.herokuapp.com/v1/colors')
     .then(function(result){
@@ -32,7 +37,7 @@ axios
     .get('https://api-tutor.herokuapp.com/v1/cars')
     .then(function(result){
         // colors.innerHTML = result.data
-        cars.innerHTML = colorTemplate({car: result.data});
+        cars.innerHTML = carsTemplate({car: result.data});
        console.log(result.data);
        
     });

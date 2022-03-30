@@ -34,8 +34,10 @@
 		{{/each}} -->
 
         
+
+	</script>
+    <script type="template-x" class="table">
         <table class="table table-dark">
-            {{#each car}}
             <thead>
                 <tr>
                     <th scope="col">Make</th>
@@ -45,17 +47,18 @@
                     <th scope="col">Reg_number</th>
                 </tr>
             </thead>
-        <tbody>
-              <tr>
+            <tbody>
+                {{#each car}}
+                <tr>
                 <th scope="row">{{this.make}}</th>
                 <th scope="row">{{this.model}}</th>
                 <th scope="row">{{this.color}}</th>
                 <th scope="row">{{this.price}}</th>
                 <th scope="row">{{this.reg_number}}</th>
               </tr>
+              {{/each}}
             </tbody>
-            {{/each}}
-	</script>
+    </script>
 
 </head>
 
