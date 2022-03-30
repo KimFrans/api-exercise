@@ -1,9 +1,6 @@
 body {
     box-sizing: border-box;
-    background-image: url("Untitled\ design\ \(2\).png");
-    /* background-color: rgb(202, 151, 204); */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* text-align: center; */
 }
 
 ul{
@@ -64,6 +61,11 @@ p{
 .carsInfoPage{
     padding-top: 1%;
     margin-left: 8%;
+}
+
+.carWidget{
+    padding-top: 2%;
+    margin-left: 5%;
 }
 
 .nav-item{
