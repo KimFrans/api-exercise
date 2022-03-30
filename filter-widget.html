@@ -57,31 +57,63 @@
 <body>
 
     <div class="bg-dark">
-        <h1 class="display-4 text-warning">Filter widget</h1>
-		<p class="text-primary">Please select a color and a brand to search for: </p>
-        <div class="colorFilter">
-            <label for="color">Color:</label>
-            <select name="colors" id="colors" class="form-select" value="">
-                
-            </select>
-            
+		<ul class="nav justify-content-end">
+			<li class="nav-item">
+				<a href="index.html" class="btn btn-success" tabindex="-1" role="button">API Home page</a>
+			</li>
+			<li class="nav-item">
+				<a href="cars.html" class="btn btn-success" tabindex="-1" role="button">Cars Info Widget</a>
+			</li>
+			
+		  </ul>
+		<div class="row">
+			<h1 class="display-4 text-warning">Filter widget</h1>
+			<p class="text-primary">Please select a color and a brand to search for: </p>
+		</div>
+
+		<div class="row">
+			<!-- <div class="col-6"> -->
+				<div class="colorFilter">
+					<label for="color">Color:</label>
+					<select name="colors" id="colors" class="form-select" value="">
+						
+					</select>
+					
+				</div>
+
+				<div class="brandsFilter">
+					<label for="brand">Brand:</label>
+					<select name="brand" id="brand" class="form-select">
+							
+					</select>
+				
+				</div>
+			<!-- </div> -->
+			<!-- <div class="col-6"> -->
+				<div class="search-btn">
+					<button type="button" class="btn btn-primary" id="search">Search</button>
+			
+				</div>
+				<!-- <div class="home2">
+					<a href="index.html" class="btn btn-success" tabindex="-1" role="button">API Home page</a>
+				</div>
+				<div class="carsInfoPage">
+					<a href="cars.html" class="btn btn-success" tabindex="-1" role="button">Cars Info Widget</a>
+				</div> -->
+
+			<!-- </div> -->
+
+		</div>
+
+		<div class="row">
+
+			<div class="search-result">
+		
+			</div>
 		</div>
             
-        <div class="brandsFilter">
-            <label for="brand">Brand:</label>
-            <select name="brand" id="brand" class="form-select">
-                    
-            </select>
-        
-        </div>
     
-        <div class="search-btn">
-            <button type="button" class="btn btn-primary" id="search">Search</button>
-    
-        </div>
-        <div class="search-result">
-    
-        </div>
+
     </div>
 	
 	<!-- <button class="search">search</button> -->

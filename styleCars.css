@@ -1,5 +1,6 @@
 body {
     box-sizing: border-box;
+    background-image: url("Untitled\ design\ \(2\).png");
     /* background-color: rgb(202, 151, 204); */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* text-align: center; */
@@ -46,4 +47,26 @@ p{
 
 #search{
     margin-left: 11%;
+}
+
+.home{
+    margin-left: 5%;
+}
+
+.home2{
+    margin-left: 8.4%;
+}
+
+.filterPage{
+    padding-top: 3%;
+    margin-left: 5%;
+}
+.carsInfoPage{
+    padding-top: 1%;
+    margin-left: 8%;
+}
+
+.nav-item{
+    padding-right: 5%;
+    padding-top: 1%;
 }
