@@ -34,6 +34,25 @@ filterBrand.addEventListener('change', function (e) {
 });
 
 filterButton.addEventListener('click', function () {
+    if (theColorValue) {
+        axios
+            .get(`https://api-tutor.herokuapp.com/v1/cars/color/${theColorValue}`)
+            .then(function (result) {
+                console.log(result.data)
+                filterDisplay.innerHTML = filterTemplate({ filters: result.data });
+
+            });
+    } 
+    if(theBrandValue) {
+        axios
+        .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}`)
+        .then(function (result) {
+            console.log(result.data)
+            filterDisplay.innerHTML = filterTemplate({ filters: result.data });
+
+        });
+
+    }
     if(theColorValue && theBrandValue){
         axios
         .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}/color/${theColorValue}`)
@@ -44,25 +63,25 @@ filterButton.addEventListener('click', function () {
         });
 
     }
-    else if (theColorValue) {
-        axios
-            .get(`https://api-tutor.herokuapp.com/v1/cars/color/${theColorValue}`)
-            .then(function (result) {
-                console.log(result.data)
-                filterDisplay.innerHTML = filterTemplate({ filters: result.data });
+    // else if (theColorValue) {
+    //     axios
+    //         .get(`https://api-tutor.herokuapp.com/v1/cars/color/${theColorValue}`)
+    //         .then(function (result) {
+    //             console.log(result.data)
+    //             filterDisplay.innerHTML = filterTemplate({ filters: result.data });
 
-            });
-    } 
-    else if(theBrandValue) {
-        axios
-        .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}`)
-        .then(function (result) {
-            console.log(result.data)
-            filterDisplay.innerHTML = filterTemplate({ filters: result.data });
+    //         });
+    // } 
+    // else if(theBrandValue) {
+    //     axios
+    //     .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}`)
+    //     .then(function (result) {
+    //         console.log(result.data)
+    //         filterDisplay.innerHTML = filterTemplate({ filters: result.data });
 
-        });
+    //     });
 
-    }
+    // }
     // axios
     //     .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}/color/${theColorValue}`)
     //     .then(function (result) {
