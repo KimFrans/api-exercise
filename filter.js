@@ -4,8 +4,8 @@ const filterBrand = document.getElementById('brand')
 const filterButton = document.getElementById('search')
 const filterDisplay = document.querySelector('.search-result')
 
-const filterTemplateText = document.querySelector('.filterTemplate');
-const filterTemplate = Handlebars.compile(filterTemplateText.innerHTML)
+const filterTemplateText = document.querySelector('.filterTemplate').innerHTML;
+const filterTemplate = Handlebars.compile(filterTemplateText)
 
 axios
     .get('https://api-tutor.herokuapp.com/v1/colors')
@@ -20,21 +20,35 @@ axios
     });
 
 
-var theColorValue = '';
-var theBrandValue = '';
+// var theColorValue = filterColor.value;
+// var theBrandValue = filterBrand.value;
 
-filterColor.addEventListener('change', function (e) {
-    theColorValue = e.target.value
+// filterColor.addEventListener('change', function (e) {
+//     theColorValue = e.target.value
 
-});
+// });
 
-filterBrand.addEventListener('change', function (e) {
-    theBrandValue = e.target.value
+// filterBrand.addEventListener('change', function (e) {
+//     theBrandValue = e.target.value
 
-});
+// });
 
 filterButton.addEventListener('click', function () {
-    if (theColorValue) {
+    var theColorValue = filterColor.value;
+    console.log(theColorValue);
+    var theBrandValue = filterBrand.value;
+
+    if (theColorValue && theBrandValue) {
+        axios
+            .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}/color/${theColorValue}`)
+            .then(function (result) {
+                console.log(result.data)
+                filterDisplay.innerHTML = filterTemplate({ filters: result.data });
+
+            });
+
+    }
+    else if (theColorValue) {
         axios
             .get(`https://api-tutor.herokuapp.com/v1/cars/color/${theColorValue}`)
             .then(function (result) {
@@ -42,52 +56,16 @@ filterButton.addEventListener('click', function () {
                 filterDisplay.innerHTML = filterTemplate({ filters: result.data });
 
             });
-    } 
-    if(theBrandValue) {
+    }
+    else if (theBrandValue) {
         axios
-        .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}`)
-        .then(function (result) {
-            console.log(result.data)
-            filterDisplay.innerHTML = filterTemplate({ filters: result.data });
+            .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}`)
+            .then(function (result) {
+                console.log(result.data)
+                filterDisplay.innerHTML = filterTemplate({ filters: result.data });
 
-        });
+            });
 
     }
-    if(theColorValue && theBrandValue){
-        axios
-        .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}/color/${theColorValue}`)
-        .then(function (result) {
-            console.log(result.data)
-            filterDisplay.innerHTML = filterTemplate({ filters: result.data });
-
-        });
-
-    }
-    // else if (theColorValue) {
-    //     axios
-    //         .get(`https://api-tutor.herokuapp.com/v1/cars/color/${theColorValue}`)
-    //         .then(function (result) {
-    //             console.log(result.data)
-    //             filterDisplay.innerHTML = filterTemplate({ filters: result.data });
-
-    //         });
-    // } 
-    // else if(theBrandValue) {
-    //     axios
-    //     .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}`)
-    //     .then(function (result) {
-    //         console.log(result.data)
-    //         filterDisplay.innerHTML = filterTemplate({ filters: result.data });
-
-    //     });
-
-    // }
-    // axios
-    //     .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}/color/${theColorValue}`)
-    //     .then(function (result) {
-    //         console.log(result.data)
-    //         filterDisplay.innerHTML = filterTemplate({ filters: result.data });
-
-    //     });
-
+    
 })
